@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+
+import { EmployeeListModule } from './employee-list/employee-list.module';
+import { ListGenerator } from './tree-generator.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, EmployeeListModule, BrowserAnimationsModule],
+  providers: [ListGenerator],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
